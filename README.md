@@ -2,8 +2,6 @@
 
 Youtube's official API currently does not support fetching of a video's transcript. This project is a simple flask server that provides API endpoints for retrieving pure-text transcripts for YouTube videos. It also provides the ability to translate transcripts into different languages. This project is built on top of [jdepoix's library](https://github.com/jdepoix/youtube-transcript-api)
 
-[![codecov](https://codecov.io/gh/mongj/youtube-transcriber-api/graph/badge.svg?token=T0DMUA1MD7)](https://codecov.io/gh/mongj/youtube-transcriber-api)
-
 ## API Endpoints
 
 Note: All language codes used should follow the **[ISO 639-1](https://www.w3schools.com/tags/ref_language_codes.asp)** standard (case-sensitive)
@@ -15,8 +13,7 @@ GET /v1/transcripts{{id}}
 ```
 
 Retrieve transcripts for a specified YouTube video.
-(try: https://youtube-transcriber-api.vercel.app/v1/transcripts?id=k_GM1JA608Y&lang=en)
-
+(try: [https://youtube-api-ivory.vercel.app/v1/transcripts?id=TwDtwfkSd58&lang=pt])
 **Query Parameters**
 
 | Parameter | Required | Note                                                                                                                                                                 |
@@ -86,13 +83,6 @@ The request returns a JSON object containing the following fields:
 | `video_id`    | The ID of the YouTube video.                                                                                                                                                                                                                                                                                                     |
 | `transcripts` | A list of transcript metadata. Each item has the following fields:<br><br>`language`: The language of the transcription<br>`languageCode`: The ISO 639-1 code<br>`isGenerated`: Boolean indicating whether the transcript is machine-generated <br>`isTranslatable`: Boolean indicating whether the transcript can be translated |
 
-## Future Plans
-- Add rate limitating
-- Migrate from flask (WSGI) to FastAPI (ASGI)
-
-## Donation
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/mjzhang)
 
 ## License
 
